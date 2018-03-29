@@ -87,7 +87,7 @@ but there are things we can do…
 ### stage 1: find out what’s there
 - synthetic testing
 	- webpagetest.com
-	- https://requestmap.this/
+	- http://requestmap.webperf.tools/
 	- bonus: third-party categorization github.com/simonhearne/thirdpartydb
 - RUM
 	- Akamai mPulse
