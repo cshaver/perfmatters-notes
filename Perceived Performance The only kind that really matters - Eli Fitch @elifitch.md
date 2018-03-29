@@ -1,0 +1,194 @@
+# Perceived Performance: The only kind that really matters - Eli Fitch @elifitch
+#PerfMatters
+
+## Why
+- Web perf is all about time
+- Time is weird
+- Objective time vs Subjective time
+- We optimize for objective time
+	- it’s easy to measure and point at
+	- what if users don’t notice?
+	- “Just Noticeable Difference”
+		- weber’s law
+		- two observable things need to be different enough to tell the difference between the two
+	- Objective time differences of 20% or less are imperceptible (Steve Seow, Microsoft)
+		- Shoot for 30% speedup
+		- we don’t live inside of a web perf blogpost
+		- “everything’s fucked up down here”
+	- don’t chase diminishing returns
+		- is this worth your time?
+	- Focus on the subjective, better bang for developer buck
+
+## How humans sense time
+- Active phase vs Passive phase
+	- activities divided into these
+	- e.g. watching a pot boil
+	- humans tend to overestimate passive time by 36% (Richard Larson, MIT)
+		- your mind’s not producing as much dopamine
+	- active and passive phases when we browse websites
+		- video: active/passive transition while browsing amazon
+- how do we use this?
+- two avenues of opportunity
+	- keep users in active state, keep them from entering passive
+	- make passive phases feel more active than they actually are
+- this is key for short durations
+- what we can do
+	- don’t tell users the’re waiting
+	- respond to users immediately even if noting is happening
+	- keep users in flow by getting a head start on loading content
+
+## Tips to improve perceived performance
+- don’t use loaders?
+	- but perceived perf?
+- loaders tell users that they have to wait
+	- that means that if we show someone a loader before they naturally transition
+	- we pick them up from active and put them in passive **prematurely**
+	- as waits approach ~1 second, then add loading indicator
+- keeping users engaged
+	- immedacy keeps users from entering a passive state
+	- we like when the app feels right there with you
+	- stay :active, kids!
+		- firing when you click or touch
+		- disappointing when sites don’t apply active states
+	- optimism! optimism!
+		- MAYBE EVERYTHING ISNT HOPELESS BULLSHIT
+		- optimistically updating UI
+			- traditionally: pessimistic
+			- ui exists to mirror what is happening on the server
+			- like button: click the button, make the request, get response, update ui
+			- optimistic: assume the request will be successful and update the UI immediately, then make the request
+			- snappy, present, tactile experince
+			- worry about he small percent whee the request inst successful
+
+keep users active!
+- takes 1 s to go from passive state to active state
+	- get all our loading done in that  time
+	- react immediately to user event
+	- clic kevent
+		- fires when mouse comes up, not down
+		- haven’t done anything even though they’ve signaled intent
+		- mouse fired 100-150ms head start before mouse up
+		- :active animations buy you more time, they hold it down longer
+		- ~200ms duration gives you a +50ms bonus
+		- doesn sound like much but you have a 1s window to get everything done
+		- works on touch devices too!
+		- begin on touchstart
+		- confirm on touchend
+		- cancel ontouchmove
+
+- un-suck passive waits
+	- you start to lose people at 1-4s of waiting
+	- critical to get this righ
+	- we can do
+		- right loading animation to make time pass more qucikly
+		- adapt loading scheme to each user
+		- distract with shiny objects
+	- ~the perfect progress bar~
+		- uncertain waits feel longer - David Maister
+		- gif: DING DONG ITS ANXIETY
+		- (suppresses dopamine production, causes time to stretch out)
+		- progress bars give users certainty
+		- animation can make a difference
+		- basically optical illusions
+			- people like the accelerating, animated bands
+			- feel 12% faster (Christ Harrison, Ziquan Yea, Scot hudson, Carnegie Mellon)
+	- BUT what about spinners?
+		- meh.
+		- spinners aren’t versatile
+			- < ~1s? don’t indicate loading
+			- > ~2s really need a progress bar
+			- only useful when between 1 and 2 seconds, but progress bars are fine  then too
+			- spinners are easy to implement
+			- real progress bars can be overkill
+		- most progress bars are fake.
+		- most progress bars are shitty
+		- broken clock that is correct 2 times a day
+		- animates to 95% and sits there. mocking you.
+	- fix: adaptive loading
+		- keep it real… ish
+		- dynamically adjust duration by adjusting based on user’s connection, based on past requests
+		- (code sample), calculating a `performanceScalar`
+		- adjust progress bar by using next anticipated duration
+		- dynamically adjust progress bars on the fly
+		- some tips:
+			- set baseline times with your test runner
+				- this is meaningless without accurate data on how long you expect API responses to take
+			- normalize for resource or payload
+				- no two requests are created equal
+			- adapt your whole loading scheme
+				- if someones connection is really fast, or image really small, maybe don’t show a progress bar
+				- maybe show a splash screen if we know a video will take a long time, with an explanation
+
+- SHINY DISTRACTIONS
+	- reticulating splines
+	- see: slack
+		- branded spinner
+		- loading thing with quote
+		- another loading screen
+		- continually changing things up, pulling from passive -> active, things to read to keep your brain engaged
+	- we can learn from **game devs**
+		- game devs have different constraints
+		- developed lots of tricks
+		- fifa game: loading screen is a mini game
+		- you don’t see this often because NAMCO had a patent on this that recently expired on any “interactive loading experience”
+	- if this feels like cheating, that’s because it is
+		- unrelated content isn’t bad if it makes the related content better and more pleasant to use
+
+## Predictive Preloading
+- react as soon as users show intent
+- what if we could present their intent before its definitively signaled
+- gamedevs do this all the time
+	- video: metroid - only can load so many rooms at a time
+	- distant players can unlock door by shooting with canon
+	- when approaching an unlocked door it would load into memory
+- you may have done it without realizing
+	- lazy loading images, etc, predictive preloading at its essence
+	- taking a snapshot of users behavior (scrolling)
+	- extrapolating their intent from that interaction
+	- preloading the content before they directly signal intent to consume it
+- we can take this idea and push it way far
+- login form
+	- username password, then taken to app and app downloads
+	- pretty easy assumption to make that if someone is on a login form they’re here to get to the app
+	- why not preload the app from the login form?
+	- it’s already done loading halfway through tying email address
+	- on a survey app, if someone is on step 2 you can assume they’ll move on to step 3
+- also applies to more freeform context like a CTA button
+	- button -> click, load 3d model
+	- exploit two quirks
+		- people watch hover and active states
+		- people slow their cursor as it approaches a button
+		- elaborate hover animations - people tended to watch these animations
+			- fancy hovers buy you up to 600ms extra
+			- still watching animations while we’re loading shit, that’s great
+			- repeat encounters have the delay decline over and over again but never dipped below regular
+		- meme:
+			- load on click
+			- load on mousedown
+			- load on mouse decelleration
+		- open source future link library
+			- tracks cursor position and speed, and rate of decelleration
+			- if enough f those predictions cluster around a certain element, you can trigger a function like preloading content
+- elaborate hover + future link = at least ~1.5 second head start
+	- very variable based on how big and isolated the button is
+	- easier to make a prediction on a big lonely button
+	- YMMV
+- predictive preloading is a very powerful tool
+	- great responsibility, use this wisely
+	- mitigate risk with data
+		- every time we make an assumption about user data, we WILL get it wrong some of the time
+		- study actual users on your actual production site
+		- study behavior flows, heat maps
+		- find good spots to implement this to make a tradeoff between risk and rewmard
+	- dry run first
+		- maybe instead of preloading content with future link, send off a piece of analytics, and another analytics piece when they actually click the button to see your false positive rate
+
+- perceived perf is a low hanging fruit
+- provide users immediate, accurate, live feedback
+- tailor your solution to individual users
+- react as soon as users signal intent; extrapolate where possible
+- introduce predictive preloading bit by bit
+- at the end of the day, what matters is how it **feels**
+	- no one browses the web with a stopwatch
+- focus on the user
+- 

@@ -1,0 +1,28 @@
+# The Power of Storytelling - Dawn Parzych @dparzych
+#PerfMatters
+
+- Stories are everywhere
+	- Medium, Instagram, Twitter, Facebook, etc. all storytelling platforms
+	- Listen to them at conferences, talk about them, etc.
+- cognitive biases
+	- narrative bias: our brains create a story to help us remember information
+	- find the ideas that make your heart sing
+	- plot, conflict, setting, characters, theme => story
+- four main attributes of empathy (theresa wiseman)
+	- ability to take perspective of someone else and see the world as others see it
+	- be non-judgmental
+	- recognize the emotions that other people are feeling
+	- communicate your understanding of that person’s feelings
+- K.I.S.S
+	- more complicated the information you’re trying to relay, the simpler the language needs to be
+	- _Storyteller’s Secret_ book - speeches by influential people like Elon Musk are at 3rd grade language
+		- story they want to tell is much more important than the vocabulary
+		- variety in how you present information
+			- “this sentence has five words. Here are five more words. …”
+	- pictures can tell stories
+		- make sure your pictures don’t manipulate the information
+		- keep your visuals as simple as possible
+- stories have certain common elements, rule
+	- e.g. rule of 3
+	- 3 seconds -> tell a story about a metric
+	- 

@@ -1,0 +1,80 @@
+# Building a Performance Engineering Culture - Gopal Brugalette
+#PerfMatters
+
+- We’re enthusiastic about performance but other people are not.
+- Responsibility for performance
+	- lots of folks have a hand in it but no one owns it
+- Prioritized responsibilities
+- Build a performance culture? You need a market strategy
+- Win hearts and minds
+	- Educate
+	- Enable
+	- Influence
+- Why performance matters
+	- Your business, your customers
+- Have a vision
+	- Performance as a service
+		- core perf engineering capabilities
+			- move perf left
+			- move perf right
+- Keep score
+	- make your decisions based on metrics, data
+	- Share interesting metrics
+	- track the p1s p2s and p3s
+	- focus on process not people (empathy, don’t throw it in people’s faces)
+- Build dashboards
+	- Enable self service
+- Build a framework
+	- Make it easy to script, execute, monitor, and analyze
+	- “we just don’t have time”
+	- open source stuff
+		- jmeter, gatlin, jenkins, etc
+- Send a newsletter (GOTTA BE A ZINE)
+	- visuals, content, distribution
+	- get people thinking about performance
+- Strut your stuff @ tech fairs
+	- get their attention
+	- elevator speech
+	- engage individually
+	- shift coverage
+	- logistics
+	- follow-ups
+	- use a robot arm to push a button
+- Give talks and presentations
+	- town halls, tech talks, lunch and learn, brownbags
+	- dive deep, interact, make a call to action
+- A picture is worth…
+	- posters, monitors, flyers
+- Survey says!
+	- get the data you need
+	- target the right audience
+	- make it easy
+	- be friendly
+	- be fun
+	- engage them
+- get the party started
+	- kickstart
+		- write scripts
+		- run tests
+		- analyze reports
+	- train
+		- testing tools
+		- APM tools
+		- analysis
+	- handoff
+- whitepapers and case studies
+- engage!
+	- make it easy
+	- define your engagement process
+	- advertise services and expertise
+	- how do you work with your customers?
+- build relationships
+	- roundups, touchbases, 1-on-1s
+	- open a dialogue
+	- challenges and expectations
+	- not a project status
+- office hours
+- embed yourself
+	- join the team
+	- go to standups
+	- contribute

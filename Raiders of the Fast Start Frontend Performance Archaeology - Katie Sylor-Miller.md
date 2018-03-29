@@ -1,0 +1,115 @@
+# Raiders of the Fast Start: Frontend Performance Archaeology - Katie Sylor-Miller
+#PerfMatters
+
+- Archaeology - human culture
+- Perf archaeology - dev culture
+- Achaeology 101
+	- Hypothesis
+	- Survey
+	- Excavate
+	-  Interpret
+- E.g. perf on mobile listing page
+	- good test bed
+	- 5 years of cruft
+	- multiple teams currently working on it
+	- looked at existing state of page
+		- histogram
+		- break down into population that falls at 1-5 seconds
+		- 15% 1s or less
+		- conversion rate declines for every second of DOM content loading time
+		- conversion vs population, a ton of opportunity
+- **hypothesis:** improving the perf of the listing page will increase conversion
+	- “fortune and glory, kid”
+- **survey**
+	- already do all the best practices
+	- “now what?”
+	- decided to focus on **critical rendering path**
+	- “now what?”
+	- you need to be xyz frames, load times, etc
+		- HOW DO YOU ACTUALLY DO THAT
+	- “ground penetrating radar”
+		- webpagetest.org
+		- mobile listing page - above the fold
+		- waterfall
+			- “only time i’m going to acknowledge that the kingdom of the crystal skull movie even exists”
+	- areas for improvement
+		- lazy load images
+		- reduce css file size
+			- combine css rules and remove unused rules
+		- switch to svgs
+		- reduce js file size
+- **excavate** - start digging!
+	- Test Pts
+	- Etsy has a big experimentation culture, internal A/B system
+	- Figured out discreet test bits, push it out as a user-facing experiment
+		- lazy loading
+			- 37 images 814kb (35 of them not part of critical rendering path)
+			- slower your network speed, the greater the effect these perf improvements have
+		- css
+			- 5 css files, 98kb / 0.6mb
+			- “load only what you need” - easier said than done
+				- lots of css for variations, etc
+			- automation to the rescue?
+				- selenium script opens page(s) in a browser
+				- run uncle
+				- output a new file with only the css in use
+				- … but we didn’t capture *all* states and had to keep adding more every time we found a big
+		- lazy loading + css experiment
+			- CDF - cumulative distributive function graph
+			- Conversion up!!
+				- “x marks the spot”
+		- switch to SVGs
+			- 5 bg images, 1 icon font
+			- didn’t have a big effect on DOMContentLoaded
+			- Experiment results -1% on page load
+			- CDF, conversion no change
+			- went live with it anyway because it was the right thing to do
+	- **stratigraphy**
+		- when you start digging things up, stuff in lower layers was left before upper layers
+		- you want to understand the stratigraphy of the site you’re looking at
+		- a brief history of js at etsy
+			- 2010 - jQuery w/ homegrown system to concat
+			- 2011 - “sprockets”, dependencies inlined using rails-style
+			- 2012 - requireJS - AMD dependencies
+			- 2017 - still a mix of everything :(
+			- JS IS A PIT OF SNAKES
+	- reduce JS files
+		- page-specific file 56kb, 121 deps, global file 142kb, 124 deps 
+		- tree shaking / static analysis?
+			- HAHA NO TYPES
+		- manual JS reduction
+			- how to be a JS detective
+				- JS dependency, look at and figure out what it’s doing
+					- find a jQuery selector in there? search for selector in smarty/mustache templates
+					- find the php view that includes the template file
+					- find the php controller pushing the view out
+					- check the controller code, maybe an experiment flag bucketing this?? has it been touched in 5 years??
+						- maybe you can delete it!!
+						- this is bananas
+						- “why are you doing this?” “i don’t know i just feel like I want to try”
+				- this was a huge disappointment, very slight difference
+				- conversion went down?! couldn’t figure out why
+					- js errors actually decreased by 3%
+					- no smoking gun
+		- javascript instrumentation
+			- code coverage? tab in chrome
+			- introducing Vimes (stay tuned, hopefully open sourced soon)
+				- re-write js to log function calls
+				- capture real user actions
+				- send logs onLoad and onUnLoad
+				- map # of calls back to source files
+			- only served to 1% of users, random bucketing for an hour or two at a time (because this logging actually interferes)
+			- 27% and 37% in page-specific and global js files, respectively
+				- results were good! conversion went up!
+	- **interpret**
+		- performance directly affects conversion
+		- frontend performance is just as important as backend, if not more
+			- working on the culture, so that people value FE as much as they value BE
+		- our experiences are not our users experiences (especially on mobile)
+		- small-scale tweaks don’t always pan out
+		- your FE architecture needs to match your development culture
+			- what we have: static top-level css or js dependency managed at the page level
+				- regardless of experience of the page or experiment
+			- what we need: dynamic FE dependency management at the component level
+		- architect for deletion
+			- need to make it easy to reason about your dependencies so you know what’s used and what’s isn’t
