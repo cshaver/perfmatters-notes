@@ -1,5 +1,4 @@
 # Perceived Performance: The only kind that really matters - Eli Fitch @elifitch
-#PerfMatters
 
 ## Why
 - Web perf is all about time
@@ -191,4 +190,4 @@ keep users active!
 - at the end of the day, what matters is how it **feels**
 	- no one browses the web with a stopwatch
 - focus on the user
-- 
+-

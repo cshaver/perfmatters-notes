@@ -1,5 +1,4 @@
 # Third-party content: the weak link in the chain - Simon Hearne @SimonHearne
-#PerfMatters
 
 simonhearne.github.io/weak-links
 
@@ -110,8 +109,8 @@ but there are things we can do…
 - bonus: determine the value!
 	- blog.sumall.com/journal/optimizely-got-me-fired.html
 
-> Everything should have a value, because everything has a cost.  
-> – Tim Kadlec  
+> Everything should have a value, because everything has a cost.
+> – Tim Kadlec
 
 ### stage 3: measure them and report on them
 - content security policy (report-only)

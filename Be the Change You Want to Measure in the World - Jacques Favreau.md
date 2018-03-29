@@ -1,5 +1,4 @@
 # Be the Change You Want to Measure in the World - Jacques Favreau
-#PerfMatters
 
 ## Values
 Values mismatch shit gets left out.

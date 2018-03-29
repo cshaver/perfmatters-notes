@@ -1,5 +1,4 @@
 # There’s more to performance than meets the eye - Léonie Watson @LeonieWatson
-#PerfMatters
 
 ## Screen readers
 - do cool stuff

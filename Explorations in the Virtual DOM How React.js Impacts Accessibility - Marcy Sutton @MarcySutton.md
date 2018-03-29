@@ -1,5 +1,4 @@
 # Explorations in the Virtual DOM: How React.js Impacts Accessibility - Marcy Sutton @MarcySutton
-#PerfMatters
 
 ## New JavaScript Hotness syndrome
 ## What made React.js different
@@ -106,7 +105,7 @@ github.com/davidtheclark/react-aria-menubutton
 	- gives you some hooks to tell JSDOM “here’s `window`, here’s `document`”
 
 #### Integration Tests
-> Frontend bugs have occurred with boundary between components or layout of our app – for example between the API and the data layer, the layout and our components, or between a parent and child component.  
+> Frontend bugs have occurred with boundary between components or layout of our app – for example between the API and the data layer, the layout and our components, or between a parent and child component.
 
 ##### Testing with axe-webdriverjs
 bit.ly/a11y-demo-app

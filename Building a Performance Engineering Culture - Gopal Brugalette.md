@@ -1,5 +1,4 @@
 # Building a Performance Engineering Culture - Gopal Brugalette
-#PerfMatters
 
 - We’re enthusiastic about performance but other people are not.
 - Responsibility for performance

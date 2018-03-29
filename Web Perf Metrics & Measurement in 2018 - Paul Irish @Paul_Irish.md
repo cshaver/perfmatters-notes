@@ -1,5 +1,4 @@
 # Web Perf Metrics & Measurement in 2018 - Paul Irish @Paul_Irish
-#PerfMatters
 
 ## When is load?
 - shrug/
@@ -26,7 +25,7 @@ lets take all the frames of load and break them apart
 	- text, images (includes background images), canvas, SVG
 
 #### first meaningful paint
-- the primary content is visible 
+- the primary content is visible
 - kind of hard to define
 - marks the paint that follows most significant change to layout
 - # of layout objects added

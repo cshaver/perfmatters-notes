@@ -1,5 +1,4 @@
 # Accelerated Mobile Pages: The good, the bad and the ugly - Vitor Taliaia
-#PerfMatters
 
 ## What is AMP anyway?
 - Accelerated Mobile Pages
@@ -34,12 +33,12 @@
 	- `<script custom-element="amp-audio" ...>` `<amp-audio>`
 
 ### Not AMP-only
-> It’s not so much about what AMP does; it’s more about what it doesn’t allow.  
-> – Jeremy Keith  
+> It’s not so much about what AMP does; it’s more about what it doesn’t allow.
+> – Jeremy Keith
 
 ## The Bad
 - Where’s my page being served from?
-	- `google.com/…` what? 
+	- `google.com/…` what?
 - Constrained design
 - “Google seems to be more worriedd about chasing facebook/instagram features than speeding things up”
 
@@ -55,5 +54,5 @@
 - “Improving URLs for AMP pages”
 - “Standardizing lessons learned from AMP”
 
-> Let’s incentivize the goal, not the tool.  
-> – Tim Kadlec, “The Two Faces of AMP”  
+> Let’s incentivize the goal, not the tool.
+> – Tim Kadlec, “The Two Faces of AMP”

@@ -1,5 +1,4 @@
 # Making the browser faster - Lin Clark @linclark, @codecartoons
-#PerfMatters
 
 - Dropdown menu craziness -> lots of repaints became important, ideally 60fps
 - Content authors pushing boundaries further
@@ -48,7 +47,7 @@ multi-process architecture
 - course-grained parallelism
 
 ## firefox
-> You must be this tall to write multi-threaded code.  
+> You must be this tall to write multi-threaded code.
 
 we can’t all be wizards
 data races & memory bugs cause some of the worst security bugs

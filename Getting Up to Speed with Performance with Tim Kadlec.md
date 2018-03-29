@@ -1,5 +1,4 @@
 # Getting Up to Speed with Performance with Tim Kadlec
-#PerfMatters
 
 [#PerfMatters: Getting Up To Speed](https://perfmattersconf.com/workshop/)
 [Getting Up to Speed with Performance @ #perfmatters - Google Docs](http://tinyurl.com/yalfa9d9)
@@ -48,7 +47,7 @@ traceroute to 66.111.3.74 (66.111.3.74), 64 hops max, 52 byte packets
 		- client sends `SYN` pack
 		- server sends back a `SYN ACK`
 		- client sends `ACK`, acknowledge that they acknowledge
-		- back and forth to ensure we can reliably send this data		
+		- back and forth to ensure we can reliably send this data
 - SSL Negotiation
 	- Like TCP Connection, there is some back/forth
 		- ClientHello
@@ -65,7 +64,7 @@ traceroute to 66.111.3.74 (66.111.3.74), 64 hops max, 52 byte packets
 	- Next time it picks up where it left off, now that we know the connection is there
 
 ## What can we do?
-### CDN 
+### CDN
 
 Content duplicated on an edge server closer to the client
 
@@ -79,7 +78,7 @@ Content duplicated on an edge server closer to the client
 - `<link rel=“dns-prefetch” href="//host_name_to_prefetch.com" />` -> I’m going to get something from this domain, do the DNS lookup ahead of time
 
 #### `preconnect`
-- `<link rel="preconnect" href="//host_name_to_prefetch.com" />` 
+- `<link rel="preconnect" href="//host_name_to_prefetch.com" />`
 - Same scenario as `dns-prefetch`, but on steroids. Common scenario is a font or 3rd-party resource somewhere. Does the whole connection: DNS lookup, TCP Connection, SSL Negotiation – potentially saving 300-400ms by having the browser do this upfront
 - There’s no reason not to do both `dns-prefetch` and `preconnect`, progressive enhancement at its finest!
 - Biggest gain is when these are for dynamically inserted assets, or assets further down in the page. If the resource is right next to the prefetch, it won’t really get you any wins
@@ -147,17 +146,17 @@ Content duplicated on an edge server closer to the client
 
 “[Andy & BIll’s Law](https://en.wikipedia.org/wiki/Andy_and_Bill%27s_law)”: what Andy gives, Bill takes away
 
-> ...as bandwidth grows, and as processing power grows, as browsers get better we just keep filling everything up.  
-> — Jeff Veen  
+> ...as bandwidth grows, and as processing power grows, as browsers get better we just keep filling everything up.
+> — Jeff Veen
 
-> …25% of new Android phones have only 512MB of RAM.  
-> — Jen Fitzpatrick, VP of product management for Google Maps  
+> …25% of new Android phones have only 512MB of RAM.
+> — Jen Fitzpatrick, VP of product management for Google Maps
 
 ![](Getting%20Up%20to%20Speed%20with%20Performance%20with%20Tim%20Kadlec/A632169E-8E60-48F3-894A-385921046739.png)
 [An Introduction to Speculative Optimization in V8 | Benedikt Meurer](http://benediktmeurer.de/2017/12/13/an-introduction-to-speculative-optimization-in-v8/)
 
-> …and reduce differences in performance across browsers.  
-> — [Improving performance on twitter.com](https://blog.twitter.com/engineering/en_us/a/2012/improving-performance-on-twittercom.html)  
+> …and reduce differences in performance across browsers.
+> — [Improving performance on twitter.com](https://blog.twitter.com/engineering/en_us/a/2012/improving-performance-on-twittercom.html)
 
 - SPA architecture moves all the typical server tasks to the browser.
 - Frameworks are great but can be a foot-gun, e.g. ajax response -> render on screen into DOM can have a lot of overhead
@@ -211,7 +210,7 @@ JavaScript still manipulates these steps
 	font-weight: normal;
 	src: "...";
 }
-``` 
+```
 
 - The browser makes the request to pull the font into the page at the **Render Tree** step, before **Layout**
 - “Use not, waste not” (unless it’s an older browser)
@@ -327,7 +326,7 @@ core tracking
 	- “as you’re doing it you get distracted by the setting, like I kinda wanna go there now”
 	- jumping a little bit as scrolling through listing page reviews
 	- looks like raven bundle wrapping most of these functions
-	- 
+	-
 
 
 

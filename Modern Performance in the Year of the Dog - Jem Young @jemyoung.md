@@ -1,12 +1,11 @@
 # Modern Performance in the Year of the Dog - Jem Young @jemyoung
-#PerfMatters
 
 - How to balance perfect engineering with perfect design?
 - Balance User Experience with Developer Experience
 - Internet 3x faster than it was a few years ago, are websites 300% faster?
 
-> Engineering is about trade-offs. Good engineering is about making good trade-offs.  
-> – Jacques Favreau  
+> Engineering is about trade-offs. Good engineering is about making good trade-offs.
+> – Jacques Favreau
 
 ## What makes up performance?
 - most people would say measurement. TTR 3s we good, etc.
@@ -56,7 +55,7 @@ use only html & css // limits features
 	- but the idea still holds
 	- What sort of data structure should we use?
 	- **Buffer**
-	- Jem you work at Netflix? RXJS? 
+	- Jem you work at Netflix? RXJS?
 		- no
 	- Bluebird?
 		- Pugsly is concerned about our use of libraries

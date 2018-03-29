@@ -1,5 +1,4 @@
 # Optimize your life - Javier Garza @jjaviergarza
-#PerfMatters
 
 - Video game hacking
 	- Learn / Experiment / Enjoy

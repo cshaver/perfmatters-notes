@@ -1,5 +1,4 @@
-# Past , Present, and Future of Resource Loading - Yoav Weiss @yoavweiss
-#PerfMatters
+# Past, Present, and Future of Resource Loading - Yoav Weiss @yoavweiss
 
 ## Past
 - `time != (bytes / BW)`
@@ -15,7 +14,7 @@
 ## Problems
 ## Why is loading slow?
 ### Connection Establishment
-- First thing browser does is 
+- First thing browser does is
 - inherently latency-bound
 - hostname -> ip address (DNS request/response)
 - TCP connection established between client/server, 3-way connection
@@ -40,7 +39,7 @@
 - Browsers have priority for different types of resources
 	- HTML > CSS > JS > Fonts > Images
 	- In practices, browsers have implemented more complex logic
-	- HTML -> CSS (-> CSS), JS (-> JS), IMG resources 
+	- HTML -> CSS (-> CSS), JS (-> JS), IMG resources
 	- Dependencies!
 	- Results in crazy-ass bandwidth graphs with holes in them
 		- browser doesn’t know it needs to download more resources because it hasn’t discovered it yet
@@ -93,7 +92,7 @@
 ## Tomorrow’s
 
 - how to fix? QUIC protocol, by Google
-	- moving the entire stack from transport to security to http layer to the user space 
+	- moving the entire stack from transport to security to http layer to the user space
 		- implementations can have a tighter contnrol over what they send and when they send it
 	- handles packet losses differently, providing differently reliability guarantees than TCP
 		- each one of the strings delivered in order
@@ -125,7 +124,7 @@
 			- `<link rel="preload" as="script">` -> lets the browser figure out prorities
 	- priority hints - early proposal
 		- influence the browser’s heuristics regarding a resource’s priority
-		- a script may not be a critical resource, 
+		- a script may not be a critical resource,
 - connection establishment
 	- preconnect
 		- `<link rel="preconnect">` - tell the browser to connect ahead of time to 3rd-party domain, get that connection out of the way of the critical path for that resource
@@ -165,4 +164,3 @@
 - Unshard your domains and coalesce connections as much as possible
 - Load only the resources you actually need
 - Future improvements underway!
-	

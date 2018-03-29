@@ -1,5 +1,4 @@
 # The Power of Storytelling - Dawn Parzych @dparzych
-#PerfMatters
 
 - Stories are everywhere
 	- Medium, Instagram, Twitter, Facebook, etc. all storytelling platforms
@@ -25,4 +24,4 @@
 - stories have certain common elements, rule
 	- e.g. rule of 3
 	- 3 seconds -> tell a story about a metric
-	- 
+	-

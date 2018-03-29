@@ -1,5 +1,4 @@
 # Cultivating community: building powerful relationships by communicating with empathy - Sharon Steed @sharonsteed #empathyatwork
-#PerfMatters
 
 ## What is empathy?
 - The ability to understand and share the feelings of another person

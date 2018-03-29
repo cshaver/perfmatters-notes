@@ -1,5 +1,4 @@
 # Demystifying Performance Timers - Jeremy Wagner @malchata
-#PerfMatters
 
 ## Regarding Testing Methods
 ### Synthetic Testing (or _lab data_)
@@ -88,7 +87,7 @@ w3.org/TR/navigation-timing-2/
 - DOM is being process, takes time to break down the document, tokenize HTMl tags, discover other resources, populate the DOM
 - `domInteractive`
 - `domContentLoadedEventStart`
-- `domContentLoadedEventEnd` 
+- `domContentLoadedEventEnd`
 - `domComplete` - everything is loaded, all page-dependent resources
 - interactive and conentlodedeventstart occur around the same time
 - depending on FE arch complexity, domfomplete often occurs after loadedeventend
@@ -133,7 +132,7 @@ w3.org/TR/navigation-timing-2/
 		- server-timing headers are visualized in Chrome when present in headers, with human-readable labels
 		- NEAT
 - Paint Timing API
-	- w3.org/TR/paint-timing 
+	- w3.org/TR/paint-timing
 	- Try it in the console* (*only in chrome)
 		- `performance.getEntriesByType('paint')`
 		- `first-paint`, meaningful or not, `first-contentful-paint` (usually the same, still in dev kinda new)

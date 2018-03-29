@@ -1,5 +1,4 @@
 # Developing Performant Accessible Sites Through Semantic HTML - Kimberly Muñoz @kimberlymunoz
-#PerfMatters
 
 ## What is semantic HTML?
 - Markup that reinforces the meaning of the page

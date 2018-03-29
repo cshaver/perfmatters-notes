@@ -1,5 +1,4 @@
 # Making Pinterest Fast - Jess, Michelle, Sarah
-#PerfMatters
 
 ## First Dedicated Perf Team
 - 200M global monthly active users, 1M+ requests per second
@@ -9,8 +8,8 @@
 	- 28% permanent abandonment rate for slow sites
 - Solid engagement lifts, but ?
 
-> If you can’t measure something you can’t understand it…  
-> - H James Harrington  
+> If you can’t measure something you can’t understand it…
+> - H James Harrington
 
 ## Data Confidence
 - **Pinner Wait Time (PWT)**

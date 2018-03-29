@@ -1,5 +1,4 @@
 # Raiders of the Fast Start: Frontend Performance Archaeology - Katie Sylor-Miller
-#PerfMatters
 
 - Archaeology - human culture
 - Perf archaeology - dev culture
@@ -74,7 +73,7 @@
 			- 2017 - still a mix of everything :(
 			- JS IS A PIT OF SNAKES
 	- reduce JS files
-		- page-specific file 56kb, 121 deps, global file 142kb, 124 deps 
+		- page-specific file 56kb, 121 deps, global file 142kb, 124 deps
 		- tree shaking / static analysis?
 			- HAHA NO TYPES
 		- manual JS reduction
