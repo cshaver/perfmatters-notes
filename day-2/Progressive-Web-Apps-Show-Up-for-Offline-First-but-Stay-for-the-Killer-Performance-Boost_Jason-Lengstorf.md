@@ -1,7 +1,7 @@
 # Progressive Web Apps: Show Up for Offline First, but Stay for the Killer Performance Boost - Jason Lengstorf @jlengstorf
  #PerfMatters
 
-git.io/v9tEr
+Slides: https://git.io/pwa-perf
 
 ## How much does your website **cost**?
 - We measure cost in seconds
