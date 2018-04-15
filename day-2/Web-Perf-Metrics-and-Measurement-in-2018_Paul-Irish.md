@@ -1,5 +1,7 @@
 # Web Perf Metrics & Measurement in 2018 - Paul Irish @Paul_Irish
 
+Slides: https://docs.google.com/presentation/d/1UcjvtuMT4VAmc-MySWOcc1rLkMNoDjt2DxIhvfHNRXg/present
+
 ## When is load?
 - shrug/
 - Page load cannot be captured by a single metric
